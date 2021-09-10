@@ -24,7 +24,12 @@ public class BootStrapData implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    var publisher = new Publisher("Sunset Avenue 123", "Oulu", "Finland", "90100");
+    var publisher = new Publisher();
+    publisher.setName("SFG Publishing");
+    publisher.setCity("Oulu");
+    publisher.setState("Finland");
+    publisher.setAddressLine1("Sunset Avenue 123");
+    publisher.setZip("90100");
     publisherRepository.save(publisher);
 
     var author = new Author("Big", "Lebowski");

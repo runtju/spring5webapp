@@ -11,6 +11,7 @@ import java.util.Set;
 
 @Entity
 public class Publisher {
+  private String name;
   private String addressLine1;
   private String city;
   private String state;
@@ -25,13 +26,6 @@ public class Publisher {
   private Long id;
 
   public Publisher() {
-  }
-
-  public Publisher(String addressLine1, String city, String state, String zip) {
-    this.addressLine1 = addressLine1;
-    this.city = city;
-    this.state = state;
-    this.zip = zip;
   }
 
   @Override
@@ -97,14 +91,23 @@ public class Publisher {
     this.books = books;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
   @Override
   public String toString() {
     return "Publisher{" +
-            "addressLine1='" + addressLine1 + '\'' +
+            "name='" + name + '\'' +
+            ", addressLine1='" + addressLine1 + '\'' +
             ", city='" + city + '\'' +
             ", state='" + state + '\'' +
             ", zip='" + zip + '\'' +
+            ", books=" + books +
             ", id=" + id +
             '}';
   }
